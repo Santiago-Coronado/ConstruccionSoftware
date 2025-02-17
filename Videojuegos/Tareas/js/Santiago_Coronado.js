@@ -5,7 +5,7 @@
 "use strict";
 
 // Devuelve la primera letra que no se repite en una oracion
-function firstNonRepeating(oracion) {
+export function firstNonRepeating(oracion) {
     let contador=[];
     for(let i=0; i<oracion.length; i++){
         let letra= oracion[i];
@@ -26,7 +26,7 @@ function firstNonRepeating(oracion) {
 }
 
 // ordena un arreglo
-function bubbleSort(arreglo,tamaño){
+export function bubbleSort(arreglo,tamaño){
     let temp;                                          
     for (let i = 0; i < tamaño - 1; i++) {              
         for (let j = 0; j < tamaño - i - 1; j++) {      
@@ -42,7 +42,7 @@ function bubbleSort(arreglo,tamaño){
 
 
 // invierte un arreglo creando otro
-function invertArray(arreglo){
+export function invertArray(arreglo){
     let resultado = [];
     for(let i = arreglo.length-1; i>=0; i--){
         resultado.push(arreglo[i]);
@@ -52,7 +52,7 @@ function invertArray(arreglo){
 
 
 // invierte un arreglo sin crear otro
-function invertArrayInplace(arreglo) {
+export function invertArrayInplace(arreglo) {
     let temp;
     for (let i = 0, j = arreglo.length - 1; i < j; i++, j--) {
         temp = arreglo[i];
@@ -62,7 +62,7 @@ function invertArrayInplace(arreglo) {
 } 
 
 // hace que la primera letra de cada palabra se ponga en mayuscula 
-function capitalize(palabra){
+export function capitalize(palabra){
     let palabraseparada = palabra.split(" ");
     for (let i = 0; i<palabraseparada.length;i++){
         palabraseparada[i] = palabraseparada[i][0].toUpperCase() + palabraseparada[i].slice(1);
@@ -72,7 +72,7 @@ function capitalize(palabra){
 }
 
 // saca el maximo comun divisor de dos numeros
-function mcd(primero,segundo){
+export function mcd(primero,segundo){
     let divisor1 = [];
     let divisor2 = [];
     for(let i= 1; i<primero; i++){
@@ -99,7 +99,7 @@ function mcd(primero,segundo){
 }
 
 // cambia un string a hackerspeak
-function hackerSpeak(string){
+export function hackerSpeak(string){
     let resultado = "";
     let letras = ["a","e","i","o","s"];
     let cambios = ["4","3","1","0","5"];
@@ -120,7 +120,7 @@ function hackerSpeak(string){
 }
 
 // da los factores de un numero
-function factorize(numero){
+export function factorize(numero){
     let resultado = [];
     for (let i = 1; i<= numero+1; i++){
         if (numero%i == 0){
@@ -134,7 +134,7 @@ function factorize(numero){
 }
 
 //quita duplicados de un arreglo usando sets (que son arreglos que permiten solo elementos unicos)
-function deduplicate(arreglo){
+export function deduplicate(arreglo){
     let resultado = new Set;
     for (let x of arreglo){
         resultado.add(x)
@@ -144,7 +144,7 @@ function deduplicate(arreglo){
 
 /*
 // quita duplicados sin usar sets
-function deduplicate(arreglo) {
+export function deduplicate(arreglo) {
     let resultado = [];
     for (let i = 0; i < arreglo.length; i++) {
         let duplicado = false;
@@ -163,7 +163,7 @@ function deduplicate(arreglo) {
 */
 
 // da la longitud del texto mas corto
-function shortestString(listadestrings){
+export function shortestString(listadestrings){
     let tamañoprimerstring = listadestrings[0].length;
 
     for(let x of listadestrings){
@@ -175,7 +175,7 @@ function shortestString(listadestrings){
 }
 
 // dice si la palabra es palindromo o no
-function isPalindrome(palabra){
+export function isPalindrome(palabra){
     let normal = 0;
     let inverso = palabra.length-1;
     while (normal < inverso){
@@ -189,7 +189,7 @@ function isPalindrome(palabra){
 }
 
 // Ordena textos en orden alfabetico basado en la primera letra
-function sortStrings(listadestrings) {
+export function sortStrings(listadestrings) {
     let n = listadestrings.length;
     for (let i = 0; i < n - 1; i++) {
         for (let j = 0; j < n - i - 1; j++) {
@@ -204,7 +204,7 @@ function sortStrings(listadestrings) {
 }
 
 // te da la mediana y la moda de un arreglo de numeros
-function stats(numeros){
+export function stats(numeros){
     let mediana;
     let moda;
     let frec = {};
@@ -237,7 +237,7 @@ function stats(numeros){
 }
 
 // regresa el string que mas se repita
-function popularString(listadetextos){
+export function popularString(listadetextos){
     let frecuencia = {};
     let contador = 0;
     let popular;
@@ -257,7 +257,7 @@ function popularString(listadetextos){
 }
 
 // checa si el numero es una potencia de 2 o no
-function isPowerOf2(numero){
+export function isPowerOf2(numero){
     if (numero < 1){
         return false;
     }
@@ -275,12 +275,13 @@ function isPowerOf2(numero){
 }
 
 // ordenar arreglo de numeros de manera descendente
-function sortDescending(numeros){
+export function sortDescending(numeros){
     let ordenado = bubbleSort(numeros,numeros.length-1);
     let resultado = invertArray(ordenado);
     return resultado;
 }
 
+/*
 console.log("La letra que se repita mas es: ",firstNonRepeating("abacddbec"))
 var arreglo = [5,9,8,3];
 console.log("Arreglo ordenado: ",bubbleSort(arreglo,4));
@@ -334,3 +335,4 @@ else {
 
 var numerosaordenar = [5,6,7,2,1,3,8,9];
 console.log("Lista ordenada de manera descendente:",sortDescending(numerosaordenar));
+*/
