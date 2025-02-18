@@ -6,37 +6,37 @@
 
 // Devuelve la primera letra que no se repite en una oracion
 export function firstNonRepeating(oracion) {
-    let contador=[];
-    for(let i=0; i<oracion.length; i++){
-        let letra= oracion[i];
-        if(contador[letra]){
-            contador[letra]++;
-        }else{
-            contador[letra]= 1;
+    for (let i=0; i<oracion.length; i++) {
+        let repeated = false;
+        for (let j=0; j<oracion.length; j++) {
+            if (oracion[i] == oracion[j] && i != j) {
+                repeated = true;
+                break;
+            }
+        }
+        //console.log(`Char: ${string[i]}, repeated: ${repeated}`);
+        if (!repeated) {
+            return oracion[i];
         }
     }
-    for(let i= 0; i<oracion.length; i++) {
-        let letra= oracion[i];
-        if(contador[letra]== 1) {
-            return letra;
-        }
-    }
-    
-    return null;
 }
 
 // ordena un arreglo
-export function bubbleSort(arreglo,tamaño){
-    let temp;                                          
-    for (let i = 0; i < tamaño - 1; i++) {              
-        for (let j = 0; j < tamaño - i - 1; j++) {      
-            if (arreglo[j] > arreglo[j + 1]) {                  
-                temp = arreglo[j];                         
-                arreglo[j] = arreglo[j + 1];                      
-                arreglo[j + 1] = temp;                     
+export function bubbleSort(arreglo) {
+    let n = arreglo.length;
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < n - 1; i++) {
+            if (arreglo[i] > arreglo[i + 1]) {
+                let temp = arreglo[i];
+                arreglo[i] = arreglo[i + 1];
+                arreglo[i + 1] = temp;
+                swapped = true;
             }
-        }                 
-    }
+        }
+        n--;
+    } while (swapped);
     return arreglo;
 }
 
@@ -63,6 +63,9 @@ export function invertArrayInplace(arreglo) {
 
 // hace que la primera letra de cada palabra se ponga en mayuscula 
 export function capitalize(palabra){
+    if (palabra.length == 0){
+        return "";
+    }
     let palabraseparada = palabra.split(" ");
     for (let i = 0; i<palabraseparada.length;i++){
         palabraseparada[i] = palabraseparada[i][0].toUpperCase() + palabraseparada[i].slice(1);
@@ -72,30 +75,20 @@ export function capitalize(palabra){
 }
 
 // saca el maximo comun divisor de dos numeros
-export function mcd(primero,segundo){
-    let divisor1 = [];
-    let divisor2 = [];
-    for(let i= 1; i<primero; i++){
-        if (primero%i ==0){
-            divisor1.push(i);
-        }
+export function mcd(primero, segundo) {
+    if (primero === 0) {
+        return segundo;
     }
-    for(let j= 1; j<segundo; j++){
-        if (segundo%j == 0){
-            divisor2.push(j);
-        }
+    if (segundo === 0) {
+        return primero;
     }
 
-    let resultado = [];
-    for(let x of divisor1){
-        for (let y of divisor2){
-            if (x == y){
-                resultado.push(x);
-                break;
-            }
-        }
+    while (segundo !== 0) {
+        let temp = segundo;
+        segundo = primero % segundo;
+        primero = temp;
     }
-    return resultado[resultado.length-1];
+    return primero;
 }
 
 // cambia un string a hackerspeak
@@ -121,6 +114,9 @@ export function hackerSpeak(string){
 
 // da los factores de un numero
 export function factorize(numero){
+    if (numero == 0){
+        return [];
+    }
     let resultado = [];
     for (let i = 1; i<= numero+1; i++){
         if (numero%i == 0){
@@ -132,7 +128,7 @@ export function factorize(numero){
     }
     return resultado;
 }
-
+/*
 //quita duplicados de un arreglo usando sets (que son arreglos que permiten solo elementos unicos)
 export function deduplicate(arreglo){
     let resultado = new Set;
@@ -141,8 +137,8 @@ export function deduplicate(arreglo){
     }
     return resultado;
 }
+*/
 
-/*
 // quita duplicados sin usar sets
 export function deduplicate(arreglo) {
     let resultado = [];
@@ -160,10 +156,13 @@ export function deduplicate(arreglo) {
     }
     return resultado;
 }
-*/
+
 
 // da la longitud del texto mas corto
-export function shortestString(listadestrings){
+export function findShortestString(listadestrings){
+    if (listadestrings.length == 0){
+        return 0;
+    }
     let tamañoprimerstring = listadestrings[0].length;
 
     for(let x of listadestrings){
@@ -211,6 +210,10 @@ export function stats(numeros){
     let contador = 0;
     let resultado = [];
 
+    if (numeros.length == 0){
+        return [0,0];
+    }
+
     let ordenado = bubbleSort(numeros);
     if (ordenado.length%2 == 0){
         mediana = (ordenado[(ordenado.length/2)-1] + ordenado[((ordenado.length)/2)])/2;
@@ -241,6 +244,9 @@ export function popularString(listadetextos){
     let frecuencia = {};
     let contador = 0;
     let popular;
+    if (listadetextos.length == 0){
+        return "";
+    }
     for (let i = 0; i< listadetextos.length; i++){
         if (frecuencia[listadetextos[i]]){
             frecuencia[listadetextos[i]]++;
@@ -319,7 +325,7 @@ else {
 var listastrings = ["Hola","Soy Santiago","No se que mas decir"]
 console.log("Lista de cadenas de texto ordenada: ",sortStrings(listastrings));
 
-var modamedia = [1,1,1,1,2,4,5,6,8,7];
+var modamedia = [[4, 4, 6, 8, 4, 4, 6, 8]];
 console.log("La mediana y la moda son:",stats(modamedia));
 
 var popularstrings = ["hola","Roguelites son complicados","hola","Santiago"];
