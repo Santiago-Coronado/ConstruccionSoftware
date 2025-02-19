@@ -5,30 +5,29 @@
 "use strict";
 
 // Devuelve la primera letra que no se repite en una oracion
-export function firstNonRepeating(oracion) {
-    for (let i=0; i<oracion.length; i++) {
+export function firstNonRepeating(oracion){
+    for (let i=0; i<oracion.length; i++){
         let repeated = false;
-        for (let j=0; j<oracion.length; j++) {
-            if (oracion[i] == oracion[j] && i != j) {
+        for (let j=0; j<oracion.length; j++){
+            if (oracion[i] == oracion[j] && i != j){
                 repeated = true;
                 break;
             }
         }
-        //console.log(`Char: ${string[i]}, repeated: ${repeated}`);
-        if (!repeated) {
+        if (!repeated){
             return oracion[i];
         }
     }
 }
 
 // ordena un arreglo
-export function bubbleSort(arreglo) {
+export function bubbleSort(arreglo){
     let n = arreglo.length;
     let swapped;
     do {
         swapped = false;
-        for (let i = 0; i < n - 1; i++) {
-            if (arreglo[i] > arreglo[i + 1]) {
+        for (let i = 0; i < n - 1; i++){
+            if (arreglo[i] > arreglo[i + 1]){
                 let temp = arreglo[i];
                 arreglo[i] = arreglo[i + 1];
                 arreglo[i + 1] = temp;
@@ -52,9 +51,9 @@ export function invertArray(arreglo){
 
 
 // invierte un arreglo sin crear otro
-export function invertArrayInplace(arreglo) {
+export function invertArrayInplace(arreglo){
     let temp;
-    for (let i = 0, j = arreglo.length - 1; i < j; i++, j--) {
+    for (let i = 0, j = arreglo.length - 1; i < j; i++, j--){
         temp = arreglo[i];
         arreglo[i] = arreglo[j];
         arreglo[j] = temp;
@@ -75,15 +74,15 @@ export function capitalize(palabra){
 }
 
 // saca el maximo comun divisor de dos numeros
-export function mcd(primero, segundo) {
-    if (primero === 0) {
+export function mcd(primero, segundo){
+    if (primero === 0){
         return segundo;
     }
-    if (segundo === 0) {
+    if (segundo === 0){
         return primero;
     }
 
-    while (segundo !== 0) {
+    while (segundo !== 0){
         let temp = segundo;
         segundo = primero % segundo;
         primero = temp;
@@ -98,14 +97,14 @@ export function hackerSpeak(string){
     let cambios = ["4","3","1","0","5"];
     for (let i of string){
        let cambiado = false;
-       for (let j = 0; j < letras.length; j++) {
+       for (let j = 0; j < letras.length; j++){
             if (i == letras[j]) {
                 resultado += cambios[j]; 
                 cambiado = true;
                 break; 
             }
         }
-        if (!cambiado) {
+        if (!cambiado){
             resultado += i; 
         }
     }
@@ -140,12 +139,12 @@ export function deduplicate(arreglo){
 */
 
 // quita duplicados sin usar sets
-export function deduplicate(arreglo) {
+export function deduplicate(arreglo){
     let resultado = [];
-    for (let i = 0; i < arreglo.length; i++) {
+    for (let i = 0; i < arreglo.length; i++){
         let duplicado = false;
-        for (let j = 0; j < resultado.length; j++) {
-            if (arreglo[i] === resultado[j]) {
+        for (let j = 0; j < resultado.length; j++){
+            if (arreglo[i] === resultado[j]){
                 duplicado = true; 
                 break; 
             }
@@ -188,11 +187,11 @@ export function isPalindrome(palabra){
 }
 
 // Ordena textos en orden alfabetico basado en la primera letra
-export function sortStrings(listadestrings) {
+export function sortStrings(listadestrings){
     let n = listadestrings.length;
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-            if (listadestrings[j] > listadestrings[j + 1]) {
+    for (let i = 0; i < n - 1; i++){
+        for (let j = 0; j < n - i - 1; j++){
+            if (listadestrings[j] > listadestrings[j + 1]){
                 let temp = listadestrings[j];
                 listadestrings[j] = listadestrings[j + 1];
                 listadestrings[j + 1] = temp;
