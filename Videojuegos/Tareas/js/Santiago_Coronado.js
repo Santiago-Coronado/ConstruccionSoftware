@@ -204,7 +204,7 @@ export function sortStrings(listadestrings) {
 
 // te da la mediana y la moda de un arreglo de numeros
 export function stats(numeros){
-    let mediana;
+    let media = 0;
     let moda;
     let frec = {};
     let contador = 0;
@@ -214,13 +214,10 @@ export function stats(numeros){
         return [0,0];
     }
 
-    let ordenado = bubbleSort(numeros);
-    if (ordenado.length%2 == 0){
-        mediana = (ordenado[(ordenado.length/2)-1] + ordenado[((ordenado.length)/2)])/2;
+    for (let x of numeros){
+        media +=x;
     }
-    else {
-        mediana = ordenado[(ordenado.length-1)/2];
-    }
+    media = media/(numeros.length);
 
     for (let i = 0; i< numeros.length; i++){
         if (frec[numeros[i]]){
@@ -234,10 +231,11 @@ export function stats(numeros){
             moda = numeros[i];
         }
     }
-    resultado.push(mediana);
+    resultado.push(media);
     resultado.push(moda);
     return resultado;
 }
+
 
 // regresa el string que mas se repita
 export function popularString(listadetextos){
