@@ -1,0 +1,14 @@
+ol {
+    list-style: circle;
+}
+
+h3 {
+    border: darkgreen 5px solid;
+    font-style: oblique;
+    font-weight: lighter;
+}
+
+header {
+    margin: 10px 3px;
+    padding: 2px;
+}

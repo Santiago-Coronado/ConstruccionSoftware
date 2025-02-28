@@ -1,0 +1,15 @@
+table {
+    border-bottom: white 5px solid;
+    border-top: white 5px solid;
+    border-left: grey 5px dotted;
+    border-right: grey 5px dotted;
+}
+
+th {
+    border: white 3px solid;
+    font: italic small-caps bold 16px/2 cursive;
+}
+
+td {
+    border: white 3px solid;
+}
