@@ -1,0 +1,89 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: darkslategrey;
+    color: white;
+}
+
+header nav {
+    display: flex;
+    margin: 18.72px;
+    padding: 5px;
+}
+
+header h3 {
+    display: flex;
+    padding: 10px;
+    padding-left: 150px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header nav a {
+    display: flex;
+    padding: 5px;
+}
+
+body {
+    margin: 0px;
+}
+
+#subscribeSection {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: darkslategray;
+    color: white;
+}
+
+#subscribeSection form button {
+    background-color: orange;
+    color: white;
+}
+
+#Naranja {
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+    color: white;
+    padding: 50px 300px;
+}
+
+#Titulo_Naranja {
+    display: flex;
+    justify-content: center;
+}
+
+#Contenido_Naranja {
+    display: flex;
+}
+
+#subscribeSection form {
+    margin: 16px;
+}
+
+#imageSection {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+#imageSection div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: darkslategray;
+    color: white;
+    padding-top: 20px;
+}
