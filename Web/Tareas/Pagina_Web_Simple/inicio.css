@@ -1,25 +1,29 @@
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+body {
+    margin: 0px;
+}
  
 header {
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    background-color: darkslategrey;
+    align-items: center;
+    background-color: rgb(48, 60, 68);
     color: white;
 }
 
 header nav {
-    display: flex;
     margin: 18.72px;
-    padding: 5px;
+    display: flex;
+    padding: 5px 250px 5px 10px;
 }
 
 header h3 {
     display: flex;
     padding: 10px;
-    padding-left: 150px;
+    padding-left: 230px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -28,29 +32,34 @@ header nav a {
     padding: 5px;
 }
 
-body {
-    margin: 0px;
-}
-
 #subscribeSection {
     display: flex;
     justify-content: center;
     align-content: center;
-    background-color: darkslategray;
+    background-color:  rgb(48, 60, 68);
     color: white;
+    font-weight: bold;
 }
 
+#subscribeSection p{
+    padding: 10px 30px 10px 80px;
+}
+
+#subscribeSection form {
+    padding: 10px 10px 10px 10px;
+}
 #subscribeSection form button {
-    background-color: orange;
+    background-color: rgb(196, 127, 0);
     color: white;
+    font-weight: bold;
 }
 
 #Naranja {
     display: flex;
     flex-direction: column;
-    background-color: orange;
+    background-color: rgb(196, 127, 0);
     color: white;
-    padding: 50px 300px;
+    padding: 50px 300px 50px 300px;
 }
 
 #Titulo_Naranja {
@@ -71,7 +80,7 @@ body {
     justify-content: space-evenly;
     align-content: center;
     padding-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 #imageSection div {
@@ -83,7 +92,7 @@ body {
 footer {
     display: flex;
     justify-content: center;
-    background-color: darkslategray;
+    background-color: rgb(48, 60, 68);;
     color: white;
     padding-top: 20px;
 }
