@@ -81,8 +81,9 @@ class Paddle extends GameObject {
 }
 
 class Brick extends GameObject {
-    constructor(position, width, height, color) {
-        super(position, width, height, color, "brick");
+    constructor(position, width, height, colors) {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        super(position, width, height, randomColor, "brick");
         this.active = true;
     }
 
@@ -102,9 +103,11 @@ ball2.inPlay = false;
 const bricks = [];
 
 // Create bricks
+const brickColors = ["red", "green", "blue", "yellow", "purple", "orange"];
+
 for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
-        bricks.push(new Brick(new Vec(i * 100 + 10, j * 30 + 50), 80, 20, "green"));
+        bricks.push(new Brick(new Vec(i * 100 + 10, j * 30 + 50), 80, 20, brickColors));
     }
 }
 
