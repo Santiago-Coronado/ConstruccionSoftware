@@ -148,9 +148,6 @@ function createEventListeners() {
         if (event.key === 'a' || event.code === 'ArrowLeft' || event.key === 'd' || event.code === 'ArrowRight') {
             paddle.velocity = new Vec(0, 0);
         }
-        if (event.key == 'r' && !ball.inPlay) {
-            ball.initVelocity();
-        }
     });
 }
 
