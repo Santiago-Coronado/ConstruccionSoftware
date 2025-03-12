@@ -17,7 +17,7 @@ let speedIncrease = 1.02;
 let initialSpeed = 0.5;
 let blockScore = 0;
 let columns = 8;
-let rows = 5;
+let rows = 7;
 let lives = 3;
 let gameOver = false;
 
@@ -105,9 +105,20 @@ const bricks = [];
 // Create bricks
 const brickColors = ["red", "green", "blue", "yellow", "purple", "orange"];
 
+const brickWidth = 80;  
+const brickHeight = 20; 
+const brickPadding = 10; // Space between bricks
+const totalBrickWidth = (brickWidth + brickPadding) * columns - brickPadding; // Total width of all bricks in a row
+const startX = (canvasWidth - totalBrickWidth) / 2; // initial horizontal position of bricks
+
 for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
-        bricks.push(new Brick(new Vec(i * 100 + 10, j * 30 + 50), 80, 20, brickColors));
+        bricks.push(new Brick(
+            new Vec(startX + i * (brickWidth + brickPadding), j * 30 + 50), 
+            brickWidth, 
+            brickHeight, 
+            brickColors
+        ));
     }
 }
 
