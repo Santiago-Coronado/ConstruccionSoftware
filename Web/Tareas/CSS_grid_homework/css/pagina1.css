@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+    height: 100vh;
+}
+
+.grid-item {
+    padding: 10px;
+}
+
+.grid-container {
+    height: calc(100% - 16px); /*quita 8px arriba y 8px abajo*/
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+
+    gap: 10px;
+    grid-template-areas: 
+        ". . .";
+}
+
+#grid-item-1 {
+    background-color: red;
+}
+
+#grid-item-2 {
+    background-color: rgb(246, 128, 2);
+}
+
+#grid-item-3 {
+    background-color: orange;
+}
+
+#grid-item-4 {
+    background-color: darkgreen;
+}
+
+#grid-item-5 {
+    background-color: green;
+}
+
+#grid-item-6 {
+    background-color: lightgreen;
+}
+
